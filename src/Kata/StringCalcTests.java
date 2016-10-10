@@ -14,27 +14,6 @@ public class StringCalcTests {
 	}
 	private static int toInt(String text){
 		return Integer.parseInt(text);
-	}
-	
-	
-	
-	
-	
+	}	
 }
-	
-	
-	/*public static void main(String[] args) {
-		
-		int Add(String numbers){
-			String[] numArr = numbers.split(",");
-			if(!(numArr.length > 2)){
-				for(String n : numArr){
-					Integer.parseInt(n);
-				}
-			}
-			else{
-				throw new RuntimeException("array length cant include more than one integer and a comma");
-			}
-			return;
-		}
-	}/*
+
