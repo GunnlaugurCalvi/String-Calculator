@@ -1,20 +1,20 @@
 package test;
-
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import Kata.StringCalcTests;
 public class testy {
 	
 	@Test
 	public void testEmptyString(){
-		assertEquals(0, Calculator.add(""));
+		assertEquals(0, StringCalcTests.add(""));
 	}
-	
-	@Test
+	/*@Test
 	public void testOneNumber(){
-		assertEquals(1, Calculator.add("1"));
+		assertEquals(1, StringCalcTests.add("1"));
 	}
 	@Test
 	public void testTwoNumber(){
-		assertEquals(3, Calculator.add("1, 2"));
-	}
+		assertEquals(3, StringCalcTests.add("1, 2"));
+	}*/
 }
