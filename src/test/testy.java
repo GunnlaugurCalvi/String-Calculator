@@ -27,9 +27,9 @@ public class testy {
 		assertEquals(21, StringCalcTests.add("1\n2\n3\n14,1"));
 	}
 	
-	/*@Test	//The test that dont need to be tested for this case :>
-	public void testNumbersWithNewline2(){
-		assertEquals(3, StringCalcTests.add("1,\n2"));
-	}*/
+	@Test
+	public void testNegativeNumbers(){
+		assertEquals(10, StringCalcTests.add("-10,20"));
+	}
 	
 }

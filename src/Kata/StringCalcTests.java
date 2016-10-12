@@ -8,6 +8,9 @@ public class StringCalcTests {
 		}
 		else if(numbers.contains(",")){
 		String[] numArr = numbers.split(",|\n"); 
+		if(numbers.contains("-")){
+			throw new RuntimeException("Negatives not allowed: " + numArr[0]);
+		}
 		int sum = 0;
 			for(String n : numArr){
 				sum += Integer.parseInt(n);
@@ -17,4 +20,5 @@ public class StringCalcTests {
 		else
 			return 1;
 	} 
+	
 }
