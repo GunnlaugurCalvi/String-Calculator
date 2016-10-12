@@ -8,7 +8,11 @@ public class StringCalcTests {
 		}
 		else if(numbers.contains(",")){
 			String[] numArr = numbers.split(",");
-			return toInt(numArr[0]) + toInt(numArr[1]);
+			if(numArr.length > 2){
+				throw new RuntimeException("I only take 2 numbers splitted by a comma!");
+			}
+			else
+				return toInt(numArr[0]) + toInt(numArr[1]);
 		}
 		else
 			return 1;

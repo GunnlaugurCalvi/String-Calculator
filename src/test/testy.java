@@ -9,13 +9,13 @@ public class testy {
 	public void testEmptyString() {
 		assertEquals(0, StringCalcTests.add(""));
 	}
-
 	@Test
 	public void testOneNumber(){
 		assertEquals(1, StringCalcTests.add("1"));
 	}
 	@Test
 	public void testTwoNumbers(){
-		assertEquals(3, StringCalcTests.add("1,2"));
+		assertEquals(3, StringCalcTests.add("1,2,4"));
 	}
+
 }
