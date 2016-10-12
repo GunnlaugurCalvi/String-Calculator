@@ -7,18 +7,14 @@ public class StringCalcTests {
 			return 0;
 		}
 		else if(numbers.contains(",")){
-			String[] numArr = numbers.split(",");
-			if(numArr.length > 2){
-				throw new RuntimeException("I only take 2 numbers splitted by a comma!");
+		String[] numArr = numbers.split(",|\n"); 
+		int sum = 0;
+			for(String n : numArr){
+				sum += Integer.parseInt(n);
 			}
-			else
-				return toInt(numArr[0]) + toInt(numArr[1]);
+			return sum;
 		}
 		else
 			return 1;
 	} 
-
-	private static int toInt(String text){
-		return Integer.parseInt(text);
-	}     
 }
