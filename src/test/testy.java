@@ -1,8 +1,8 @@
 package test;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+//import Kata.StringCalcTests;
 
-import Kata.StringCalcTests;
 public class testy {
 	
 	@Test
