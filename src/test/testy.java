@@ -1,6 +1,8 @@
 package test;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 import Kata.StringCalcTests;
 
 public class testy {
@@ -31,5 +33,14 @@ public class testy {
 	public void testNegativeNumbers(){
 		assertEquals(10, StringCalcTests.add("-10,20"));
 	}
+	@Test 
+	public void testBigNumbers(){
+		assertEquals(2, StringCalcTests.add("1001,2"));
+	}
+	@Test 
+	public void testBigNumbers(){
+		assertEquals(999, StringCalcTests.add("200414143114,999"));
+	}
 	
+
 }
