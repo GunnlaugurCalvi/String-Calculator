@@ -3,19 +3,23 @@ package Kata;
 public class StringCalcTests {
 	
 	public static int add(String numbers){
-		
-		String[] numArr = numbers.split(",|\n"); 
+
 		if(numbers.equals("")){
 			return 0;
 		}
+
 		else if(numbers.contains(",")){
+		String[] numArr = numbers.split(",|\n"); 
 		int sum = 0;
+
 			for(String n : numArr){
-				if(toInt(n) <= 1000){
+				if(toInt(n) <= 1000 && toInt(n) >= 0){			
 					sum += Integer.parseInt(n);
 				}
+				if(toInt(n) < 0){
+					negativeNum(numArr);
+				}
 			}
-			//negativeNum(numArr);
 			return sum;
 		}
 		else
@@ -25,15 +29,15 @@ public class StringCalcTests {
 		return Integer.parseInt(text);
 	}
 	
-	/*public static void negativeNum(String[] negNums){
+	private static void negativeNum(String[] negNums){
 		String neg = "";
 		for(String n : negNums){
 			if(toInt(n) < 0){
-				neg += negNums + ",";
+				neg += n + ",";
 			}
 		}
-		if(!negNums.equals("")){
-			throw new IllegalArgumentException("Negatives not allowed:" + neg);
+		if(!(negNums.equals(""))){
+			throw new IllegalArgumentException("Negative not allowed:" + neg);
 		}
-	}*/
+	}
 }

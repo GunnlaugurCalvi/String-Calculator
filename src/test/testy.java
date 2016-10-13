@@ -29,18 +29,35 @@ public class testy {
 		assertEquals(21, StringCalcTests.add("1\n2\n3\n14,1"));
 	}
 	
-	@Test
-	public void testNegativeNumbers(){
-		assertEquals(10, StringCalcTests.add("-10,20"));
-	}
+
 	@Test 
 	public void testBigNumbers(){
 		assertEquals(2, StringCalcTests.add("1001,2"));
 	}
 	@Test 
-	public void testBigNumbers(){
-		assertEquals(999, StringCalcTests.add("200414143114,999"));
+	public void testBigNumbersvol(){
+		assertEquals(999, StringCalcTests.add("1337,999"));
 	}
 	
-
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	
+	@Test
+	public void testNegativeNumber(){
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negative not allowed:-1");
+		StringCalcTests.add("-1,2");
+	}
+	@Test
+	public void testNegativeNumbers(){
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negative not allowed:-4,-5");
+		StringCalcTests.add("2,-4,3,-5");
+	}
+	@Test
+	public void testNegativeNumbersvol2(){
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negative not allowed:-1");
+		StringCalcTests.add("-1,2");
+	}
 }
