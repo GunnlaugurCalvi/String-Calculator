@@ -60,4 +60,18 @@ public class testy {
 		thrown.expectMessage("Negative not allowed:-1");
 		StringCalcTests.add("-1,2");
 	}
+	@Test
+	public void testIfSupportDelimiter() {
+		assertEquals(3, StringCalcTests.add("//;\n1;2"));
+	}
+	@Test
+	public void testIfSupportDelimitervol2() {
+		assertEquals(98, StringCalcTests.add("//;\n53;23;3;19"));
+	}
+	@Test
+	public void testDelimiterWithNegatives() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negative not allowed:-2,-69");
+		StringCalcTests.add("//;\n-2;7\n-69\n4");
+	}
 }
